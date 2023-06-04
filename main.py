@@ -11,24 +11,24 @@ ALL_CHARACTERS = list(LOWER_LETTERS + UPPER_LETTERS + NUMBERS + SYMBOLS)
 
 # Define a list of common English words to avoid in passwords
 COMMON_WORDS = [
-    "password", 
-    "123456", 
-    "qwerty", 
-    "letmein", 
-    "monkey", 
+    "password",
+    "123456",
+    "qwerty",
+    "letmein",
+    "monkey",
     "football",
-    "iloveyou", 
-    "admin", 
-    "welcome", 
-    "abc123", 
-    "sunshine", 
+    "iloveyou",
+    "admin",
+    "welcome",
+    "abc123",
+    "sunshine",
     "master",
-    "hottie", 
-    "charlie", 
-    "solo", 
-    "princess", 
-    "dragon", 
-    "access", 
+    "hottie",
+    "charlie",
+    "solo",
+    "princess",
+    "dragon",
+    "access",
     "flower"
 ]
 
@@ -37,12 +37,6 @@ BANNED_CHARACTERS = ["'", '"', "\\"]
 
 
 def generate_password() -> str:
-    """
-    Generates a password with various rules and constraints.
-
-    Returns:
-        str: The generated password.
-    """
     # Prompt the user for the desired length of the password
     while True:
         try:
@@ -88,6 +82,7 @@ def generate_password() -> str:
 
         # Return the generated password
         return password
+
 
 # Generate and print a password
 password = generate_password()
