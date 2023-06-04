@@ -29,7 +29,7 @@ COMMON_WORDS = [
     "princess",
     "dragon",
     "access",
-    "flower"
+    "flower",
 ]
 
 # Define a list of banned characters to avoid in passwords
@@ -69,7 +69,7 @@ def generate_password() -> str:
 
         # Check if the password contains a common word or a banned character
         if any(word in password.lower() for word in COMMON_WORDS) or any(
-                char in password for char in BANNED_CHARACTERS
+            char in password for char in BANNED_CHARACTERS
         ):
             continue
 
