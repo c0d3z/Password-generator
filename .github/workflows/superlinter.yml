@@ -13,5 +13,6 @@ jobs:
         uses: super-linter/super-linter@v5.0.0
 
         env:
+          FILTER_REGEX_EXCLUDE: '^\.github($|\/.*)'
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.MY_PAT_SECRET }}
