@@ -1,6 +1,5 @@
 import random
 
-
 # Define the characters that can be used in the password
 LOWER_LETTERS = "abcdefghijklmnopqrstuvwxyz"
 UPPER_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -12,13 +11,29 @@ ALL_CHARACTERS = list(LOWER_LETTERS + UPPER_LETTERS + NUMBERS + SYMBOLS)
 
 # Define a list of common English words to avoid in passwords
 COMMON_WORDS = [
-    "password", "123456", "qwerty", "letmein", "monkey", "football",
-    "iloveyou", "admin", "welcome", "abc123", "sunshine", "master",
-    "hottie", "charlie", "solo", "princess", "dragon", "access", "flower"
+    "password", 
+    "123456", 
+    "qwerty", 
+    "letmein", 
+    "monkey", 
+    "football",
+    "iloveyou", 
+    "admin", 
+    "welcome", 
+    "abc123", 
+    "sunshine", 
+    "master",
+    "hottie", 
+    "charlie", 
+    "solo", 
+    "princess", 
+    "dragon", 
+    "access", 
+    "flower"
 ]
 
 # Define a list of banned characters to avoid in passwords
-BANNED_CHARACTERS = ["'", '"', '\\']
+BANNED_CHARACTERS = ["'", '"', "\\"]
 
 
 def generate_password() -> str:
@@ -31,8 +46,7 @@ def generate_password() -> str:
     # Prompt the user for the desired length of the password
     while True:
         try:
-            password_length = int(
-                input("Enter password length (8-64): "))
+            password_length = int(input("Enter password length (8-64): "))
             if not 8 <= password_length <= 64:
                 raise ValueError
             break
@@ -61,7 +75,8 @@ def generate_password() -> str:
 
         # Check if the password contains a common word or a banned character
         if any(word in password.lower() for word in COMMON_WORDS) or any(
-                char in password for char in BANNED_CHARACTERS):
+                char in password for char in BANNED_CHARACTERS
+        ):
             continue
 
         # Check if the password has unique characters
@@ -69,11 +84,10 @@ def generate_password() -> str:
             continue
 
         # Shuffle the characters of the password for added security
-        password = ''.join(random.sample(password, len(password)))
+        password = "".join(random.sample(password, len(password)))
 
         # Return the generated password
         return password
-
 
 # Generate and print a password
 password = generate_password()
