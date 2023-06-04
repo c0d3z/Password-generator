@@ -36,16 +36,8 @@ COMMON_WORDS = [
 BANNED_CHARACTERS = ["'", '"', "\\"]
 
 
-def generate_password() -> str:
-    # Prompt the user for the desired length of the password
-    while True:
-        try:
-            password_length = int(input("Enter password length (8-64): "))
-            if not 8 <= password_length <= 64:
-                raise ValueError
-            break
-        except ValueError:
-            print("Invalid input. Please enter an integer between 8 and 64.")
+def generate_password(password_length) -> str:
+    
 
     # Generate a password with various rules and constraints
     while True:
@@ -85,5 +77,5 @@ def generate_password() -> str:
 
 
 # Generate and print a password
-password = generate_password()
+password = generate_password(random.randint(8, 30))
 print("Your password is:", password)
