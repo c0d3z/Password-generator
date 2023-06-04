@@ -9,8 +9,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.0.0
+
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.MY_PAT_SECRET }}
